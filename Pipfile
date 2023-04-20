@@ -8,6 +8,8 @@ sphinxy = {editable = true, path = "."}
 myst-parser = "*"
 sphinx = "*"
 sphinx-autobuild = "*"
+furo = "*"
+sphinxcontrib-confluencebuilder = "*"
 
 [dev-packages]
 pytest = "*"
