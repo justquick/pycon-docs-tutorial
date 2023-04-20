@@ -10,6 +10,7 @@ sphinx = "*"
 sphinx-autobuild = "*"
 furo = "*"
 sphinxcontrib-confluencebuilder = "*"
+sphinx-multiversion = "*"
 
 [dev-packages]
 pytest = "*"

@@ -19,16 +19,30 @@ release = '0.1.0'
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#general-configuration
 
 extensions = [
-    'myst_parser',
     "sphinx.ext.autodoc",
     "sphinx.ext.napoleon",
     'sphinx.ext.viewcode',
-    # 'sphinxcontrib.confluencebuilder',
+
+    'myst_parser',
+    "sphinx_multiversion",
+    'sphinxcontrib.confluencebuilder',
 ]
 autoclass_content = 'both'
 
 
-templates_path = ['_templates']
+templates_path = [
+    "_templates",
+]
+html_sidebars = {
+    "**": [
+        "sidebar/brand.html",
+        "sidebar/search.html",
+        "sidebar/scroll-start.html",
+        "sidebar/navigation.html",
+        "sidebar/versions.html",
+        "sidebar/scroll-end.html",
+    ],
+}
 exclude_patterns = ['_build', 'Thumbs.db', '.DS_Store']
 
 def confenv(name, default=None, isbool=False):
@@ -64,3 +78,6 @@ confluence_publish_dryrun = confenv('publish_dryrun', False, True)
 
 html_theme = 'furo'
 html_static_path = ['_static']
+
+smv_tag_whitelist = r'.*'
+smv_branch_whitelist = 'main'
